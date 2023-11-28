@@ -10,6 +10,43 @@ class Vehicle {
         this.started = false;
         this.numberOfWheels = 0;
     }
+}
+class Car extends Vehicle{
+    constructor(make, model, year, color, mileage, maxPassenger, passenger, numberOfWheels, maxSpeed, fuel, scheduleService){
+        super(make, model, year, color, mileage)
+        this.maxPassenger = 5
+        this.passenger = 0
+        this.numberOfWheels = 4
+        this.maxSpeed = 160
+        this.fuel = 10
+        this.scheduleService = false
+    }
+    loadPassenger(){
+
+    }
+    start() {
+        if (this.fuel > 0) {
+          console.log("engine started...!!!")
+          return this.started = true;
+            ;
+        } else {
+            console.log("engine cannot start...")
+            return this.started = false;
+            ;
+        }
+    }
+    scheduleService(mileage){
+        let timeForMaintenance
+
+        if(this.mileage > 30000){
+            timeForMaintenance = true
+        }else{
+            timeForMaintenance = false
+        }
+
+        return timeForMaintenance
+    }
+}
 
     start() {
         if (this.fuel > 0) {
